@@ -1,0 +1,38 @@
+name: Build and Release Theme
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.1"
+
+      - name: Inject GitHub token into PHP theme
+        run: sed -i "s/__GITHUB_PAT__/${{ secrets.GH_PAT }}/g" functions.php
+
+      - name: Prepare theme zip for release
+        run: |
+          mkdir -p release/wp-theme
+          rsync -av --exclude='release' ./ release/wp-theme/
+          cd release && zip -r wp-theme.zip wp-theme
+
+      - name: List ZIP contents for debug
+        run: unzip -l release/wp-theme.zip
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: release/wp-theme.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}

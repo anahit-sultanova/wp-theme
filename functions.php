@@ -589,3 +589,19 @@ function tumo_int__register_footer_paragraph_for_wpml() {
     }
 }
 add_action('customize_save_after', 'tumo_int__register_footer_paragraph_for_wpml');
+
+
+/** UPDATE CHECKER */
+require 'plugin-update-checker/plugin-update-checker.php';
+
+use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
+
+$myUpdateChecker = PucFactory::buildUpdateChecker(
+	'https://github.com/anahit-sultanova/wp-theme/',
+	__FILE__, 
+	'wp-theme'
+);
+
+$myUpdateChecker->setBranch('main');
+$myUpdateChecker->getVcsApi()->enableReleaseAssets('/\.zip($|[?&#])/i');
+$myUpdateChecker->setAuthentication('__GITHUB_PAT__');
