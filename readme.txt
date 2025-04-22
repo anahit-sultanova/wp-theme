@@ -15,3 +15,6 @@ Introducing our TUMO International WordPress theme crafted specifically for glob
 2. Activate the theme through the 'Appearance>Themes' screen in WordPress.
 
 
+== Changelog ==
+= 1.1.1 =
+* test new functionlaity of checking and updating plugin from git.

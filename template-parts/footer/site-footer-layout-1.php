@@ -64,7 +64,7 @@ $footer_menu_location = 'footer_social_menu';
                             }
                         }
 
-                        $col_class = 'col-xl-' . (12 / count($active_sidebars)) . ' col-sm-6 col-12 d-flex justify-content-lg-start justify-content-start';
+                        $col_class = 'col-xl-' . (12 / count($active_sidebars)) . ' col-sm-6 col-12 d-flex justify-content-lg-end justify-content-start';
 
                         foreach ($active_sidebars as $i): ?>
                             <div class="<?= $col_class ?>">
