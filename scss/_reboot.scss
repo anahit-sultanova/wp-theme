@@ -1,0 +1,36 @@
+body {
+    scrollbar-width: thin;
+    scrollbar-color: #fff var(--tumo-int-primary-color);
+    &::-webkit-scrollbar {
+        width: 20px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #fff;
+    }
+
+
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--tumo-int-primary-color) ;
+        border: 4px solid #fff;
+    }
+    
+}
+
+img {
+    filter: none;
+    transition: filter .2s ease-out;
+    
+    &.lazyload,
+    &.lazyloading {
+        filter: blur(20px);
+    }
+}
+
+a {
+    color: inherit;
+    transition: all .2s ease-in;
+    &:hover {
+        color: var(--tumo-int-primary-color);
+    }
+}

@@ -1,0 +1,234 @@
+.tumo_int_single {
+    &-header {
+        &-wrap {
+            padding: 200px 0 80px;
+            position: relative;
+            &:after {
+                content: "";
+                background-color: rgba(17,17,17, 0.3);
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 20;
+            }
+        }
+        &-thumbnail {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            height: 100%;
+            margin-bottom: 0;
+            z-index: 10;
+            
+            img {
+                position: absolute;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+
+        &-info {
+            position: relative;
+            z-index: 30;
+
+            &-title {
+                h1 {
+                    color: #fff;
+                    margin: 0;
+                    font-size: 5rem;
+                    font-weight: 900;
+                }
+            }
+
+            &-meta {
+                display: flex;
+                column-gap: 20px;
+                align-items: center;
+                margin-top: 10px;
+                color: #fff;
+                a {
+                    color: #fff;
+                }
+                p {
+                    color: #fff;
+                    margin: 0;
+                }
+            }
+        }
+    }
+    &-content {
+        padding: 60px 0;
+
+        &-wrap {
+            display: grid;
+            grid-template-columns: minmax(0,1fr) 300px;
+            column-gap: 60px;
+
+            &-article {
+                font-size: 1.25rem;
+                line-height: 1.6;
+                color: #555;
+                padding-top: 25px;
+
+                h2, h3, h4{
+                    color: #222;
+                }
+
+                h2 {
+                    font-weight: 700;
+                    margin-top: 4rem;
+                    margin-bottom: 2rem;
+                    font-size: 2.3rem;
+                }
+
+                h3 {
+                    font-weight: 700;
+                    margin-top: 3rem;
+                    margin-bottom: 2rem;
+                    font-size: 1.9rem;  
+                }
+
+                p {
+                    margin-top: 2rem;
+                    margin-bottom: 2rem;
+                }
+
+                .wp-block-embed {
+                    margin-top: 3rem;
+                    margin-bottom: 3rem;
+                }
+
+                .wp-block-image {
+                    width: 100%;
+                    max-width: 100%;
+                    margin-top: 3rem;
+                    margin-bottom: 3rem;
+                    img {
+                        //border-radius: 10px;
+                    }
+                }
+            }
+
+            &-navigation {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 40px;
+                .nav-single {
+                    display: flex;
+                    flex-direction: row;
+                    column-gap: 15px;
+                    width: 40%;
+                    flex: 0 0 40%;
+                    justify-content: flex-start;
+
+                    &.nav-next {
+                        justify-content: flex-end;
+                        text-align: right;
+                        .nav-single-thumbnail {
+                            order: 2;
+                        }
+                        .nav-single-data {
+                            order: 1;
+                        }
+                    }
+
+                    &-thumbnail {
+                        width: 80px;
+                        height: 80px;
+                        flex: 0 0 80px;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            object-position: center;
+                        }
+                        
+                    }
+
+                    &-data {
+                        display: flex;
+                        flex-direction: column;
+                        row-gap: 5px;
+
+                        span {
+                            color: #999999;
+                            font-weight: 300;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 1024px){
+    .tumo_int_single {
+        &-header {
+            &-info {
+                &-title {
+                    h1 {
+                        font-size: 3rem;
+                    }
+                } 
+            }
+        }
+        &-content {
+            padding: 10px 0;
+            &-wrap {
+                grid-template-columns: minmax(0,1fr);
+                row-gap: 40px;
+
+                
+            }
+        }
+    }
+}
+
+@media(max-width: 767px){
+    .tumo_int_single {
+        &-content {
+            &-wrap {
+                &-navigation {
+                    .nav-single {
+                        &-thumbnail {
+                            display: none;
+                        }
+                    }
+                }
+            } 
+        }
+    }
+}
+
+
+@media(max-width: 550px){
+    .tumo_int_single {
+        &-content {
+            &-wrap {
+                &-navigation {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    .nav-single {
+                        flex: 0 0 100%;
+                        width: 100%;
+                    }
+                }
+            } 
+        }
+    }
+}

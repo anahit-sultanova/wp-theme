@@ -1,0 +1,282 @@
+.ti-footer {
+  width: 100%;
+  padding: 30px 0 1rem;
+  background: var(--tumo-int-footer-bg);
+  color: var(--tumo-int-footer-color);
+
+  .ti-footer-slider-light {
+    background-color: #fff;
+  }
+
+  &-layout {
+    padding-left: var(--tumo-int-footer-spacing, 23px);
+    padding-right: var(--tumo-int-footer-spacing, 23px);
+
+    .wp-block-heading {
+      font-size: 1rem;
+    }
+
+    &--brand-area {
+      display: flex;
+      flex-direction: column;
+      row-gap: 10px;
+      img {
+        max-width: var(--tumo-int-footer-width, 130px);
+      }
+
+      p {
+        max-width: 450px;
+        margin: 0;
+        color: #c0c0c0;
+        font-size: 15px;
+        font-weight: 300;
+
+        a {
+          color: #c0c0c0;
+          transition: all 0.2s ease-out;
+
+          &:hover {
+            color: var(--tumo-int-primary-color);
+          }
+        }
+      }
+    }
+
+    &--company-area {
+      height: 100%;
+      width: 100%;
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+        object-position: top;
+        max-width: var(--tumo-int-footer-company-width, 250px); 
+      }
+    }
+
+    &--social-area {
+      margin-top: 30px;
+      ul.ti-social-links {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        column-gap: 15px;
+        align-items: center;
+        justify-content: flex-start;
+        li {
+          a {
+            text-decoration: none;
+            display: block;
+            &:hover {
+              svg path {
+                fill: var(--tumo-int-footer-social-icon-hover-color);
+              }
+            }
+            svg path {
+              fill: var(--tumo-int-footer-color);
+              transition: all 0.2s ease-out;
+            }
+          }
+        }
+      }
+    }
+
+    &--widget-area {
+      display: inline-block;
+      .widget-title {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+      }
+
+      .menu {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        row-gap: 5px;
+        li {
+          a {
+            color: var(--tumo-int-footer-secondary-color);
+            transition: all 0.2s ease-out;
+            text-decoration: none;
+            font-weight: 300;
+            display: block;
+
+            &:hover {
+              color: var(--tumo-int-primary-color);
+            }
+          }
+        }
+      }
+    }
+
+    &--bottom {
+      border-top: 1px solid var(--tumo-int-footer-border-color);
+      padding-top: 1rem;
+      margin-top: 2rem;
+
+      p.ti_copyright {
+        margin: 0;
+        color: var(--tumo-int-footer-secondary-color);
+        font-size: 14px;
+        line-height: 1.8;
+      }
+
+      .widget.widget_nav_menu {
+        display: inline-block;
+        ul.menu {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          flex-direction: row;
+
+          li {
+            padding: 0 8px;
+            &:first-child {
+              padding-left: 0;
+            }
+            &:last-child {
+              padding-right: 0;
+            }
+            a {
+              display: block;
+              text-decoration: none;
+              font-size: 14px;
+              color: var(--tumo-int-footer-secondary-color);
+              transition: all 0.2s ease-out;
+              line-height: 1;
+
+              &:hover {
+                color: var(--tumo-int-primary-color);
+              }
+            }
+
+            & + li {
+              border-left: 1px solid var(--tumo-int-footer-secondary-color);
+            }
+          }
+        }
+      }
+    }
+
+    &--slider {
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--tumo-int-footer-border-color);
+      margin-bottom: 2rem;
+
+      &.footer-slider-outer {
+        border-bottom: none;
+        margin-bottom: none;
+      }
+
+      .wp-block-heading {
+        margin-bottom: 1.5rem;
+        font-weight: 400;
+        font-size: 1.8rem;
+      }
+    }
+  }
+}
+
+//Sticky Button
+
+.tumo_int_sticky_btn {
+  position: fixed;
+  z-index: 3000;
+  display: block;
+  transform: rotate(-90deg) translateX(50%);
+  transform-origin: right;
+  top: 50%;
+  right: 20px;
+  background: var(--tumo-int-primary-color);
+  color: var(--tumo-int-footer-color) !important;
+  font-size: 22px;
+  font-weight: 700;
+  transition: all 0.2s ease-in;
+  text-decoration: none;
+  padding: 5px 0;
+
+  &:hover {
+    transform: rotate(-90deg) translateX(50%) scale(1.1);
+    color: var(--tumo-int-footer-color);
+  }
+
+  &:after,
+  &:before {
+    content: "";
+    position: absolute;
+    background: var(--tumo-int-primary-color-sticky-badge);
+    display: block;
+    width: 43px;
+    height: 100%;
+    top: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  &:after {
+    left: -42px;
+    transform: scaleX(-1) rotate(90deg);
+  }
+  &:before {
+    right: -42px;
+    transform: rotate(90deg);
+  }
+}
+
+.ti_social-nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-top: 20px;
+  li {
+    a {
+      svg {
+        path {
+          fill: var(--tumo-int-footer-social-icon-color);
+          transition: all 0.2s ease-out;
+        }
+      }
+
+      &:hover {
+        svg {
+          path {
+            fill: var(--tumo-int-footer-social-icon-hover-color);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1040px) {
+  .ti-footer {
+    &-layout {
+      &--company-area {
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+        margin-top: 40px;
+      }
+    }
+  }
+}
+
+.text-right {
+  text-align: right;
+}
+
+@media (max-width: 570px) {
+  .text-left {
+    justify-content: flex-start;
+  }
+}
